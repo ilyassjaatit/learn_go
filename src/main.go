@@ -2,22 +2,15 @@ package main
 
 import "fmt"
 
+func add_int(a int, b int) int {
+	return a + b
+}
+
+func subtract_float(a float64, b float64) float64 {
+	return a - b
+}
+
 func main() {
-	//Constants
-	const pi float64 = 3.141592653589793
-	const euler = 2.71828
-	const hello_words string = "hello world"
-	fmt.Println("pi", pi)
-	fmt.Println("Euler", euler)
-	fmt.Println(hello_words)
-
-	//Sariables
-	var one int = 1
-	var two int
-	three := 3
-	two = 2
-
-	fmt.Println("one", one)
-	fmt.Println("two", two)
-	fmt.Println("three", three)
+	fmt.Println("Add: 10 + 15", add_int(10, 15))
+	fmt.Println("subtract: 10 + 15", subtract_float(10, 15))
 }
