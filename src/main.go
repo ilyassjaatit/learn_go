@@ -1,16 +1,26 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"math"
+)
 
-func add_int(a int, b int) int {
-	return a + b
-}
+const pi float32 = 3.141592654
+const square float64 = 2
 
-func subtract_float(a float64, b float64) float64 {
-	return a - b
+func area_circle(radius float64) float64 {
+	var area float64 = math.Pow(radius, square)
+	return area
 }
 
 func main() {
-	fmt.Println("Add: 10 + 15", add_int(10, 15))
-	fmt.Println("subtract: 10 + 15", subtract_float(10, 15))
+	const stop_for uint8 = 10
+	var index uint8
+	for index = 0; index <= stop_for; index++ {
+		var radius float64 = float64(index)
+		var area float64 = area_circle(radius)
+		var message string = fmt.Sprintf("var type area %T", area)
+		fmt.Println(message)
+
+	}
 }
