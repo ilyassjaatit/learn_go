@@ -2,25 +2,21 @@ package main
 
 import (
 	"fmt"
-	"math"
+	"math/big"
 )
 
-const pi float32 = 3.141592654
-const square float64 = 2
-
-func area_circle(radius float64) float64 {
-	var area float64 = math.Pow(radius, square)
-	return area
+func fibonacci_sequence(limit uint) {
+	a := big.NewInt(0)
+	b := big.NewInt(1)
+	var index uint = 0
+	for index < limit {
+		a.Add(a, b)
+		a, b = b, a
+		index = index + 1
+		fmt.Println(a)
+	}
 }
 
 func main() {
-	const stop_for uint8 = 10
-	var index uint8
-	for index = 0; index <= stop_for; index++ {
-		var radius float64 = float64(index)
-		var area float64 = area_circle(radius)
-		var message string = fmt.Sprintf("var type area %T", area)
-		fmt.Println(message)
-
-	}
+	fibonacci_sequence(15)
 }
